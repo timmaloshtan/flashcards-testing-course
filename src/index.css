@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 5%;
+    text-align: center;
+}
+
+.link-home {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.card {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between
+}
+
+.text-revealed {
+    visibility: visible;
+    animation-name: fade-in;
+    animation-duration: 1s;
+}
+
+.text-hidden {
+    visibility: hidden;
+}
+
+@keyframes fade-in {
+    from { opacity: 0 }
+    to { opacity: 100 }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__group:not(:last-child) {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.form__label {
+    margin-right: 1rem;
+}
+
+.form__control:not(:last-child) {
+    margin-right: 1rem;
+}
