@@ -8,7 +8,7 @@ const mapStateToProps = ({ stack }) => ({
   stack,
 });
 
-class Stack extends Component {
+export class Stack extends Component {
   render() {
     const { stack } = this.props;
     const {

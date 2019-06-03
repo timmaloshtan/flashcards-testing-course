@@ -17,7 +17,7 @@ const INITIAL_STATE = {
   cards: [],
 };
 
-class StackForm extends Component {
+export class StackForm extends Component {
   constructor(props) {
     super(props);
 

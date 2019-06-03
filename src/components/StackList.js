@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import stacksData from '../data/stacks.json';
 import { setStack, loadStacks } from '../actions'
 
-class StackList extends Component {
+export class StackList extends Component {
   componentDidMount() {
     const { loadStacks, stacks }= this.props;
     if (stacks.length) {
