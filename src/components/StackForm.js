@@ -12,7 +12,7 @@ import {
 
 import { addStack } from '../actions';
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   title: '',
   cards: [],
 };
@@ -63,7 +63,10 @@ export class StackForm extends Component {
   addStack() {
     const { addStack } = this.props;
     
-    addStack(this.state);
+    addStack({
+      ...this.state,
+      id: v4(),
+    });
 
     this.setState(INITIAL_STATE);
   }

@@ -1,15 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { StackForm } from './StackForm';
+import { StackForm, INITIAL_STATE } from './StackForm';
 
 const CHANGE_TITLE = 'CHANGE TITLE';
 const CHANGE_PROMPT = 'CHANGE PROMPT';
 const CHANGE_ANSWER = 'CHANGE ANSWER';
 
+const addStack = jest.fn();
+
+const props = { addStack };
 
 describe('StackForm component', () => {
-  const stackForm = shallow(<StackForm />);
+  const stackForm = shallow(<StackForm {...props} />);
 
   it('should render the form title', () => {
     expect(stackForm.find('h4').at(1).text()).toEqual('Create a New Stack');
@@ -39,6 +42,21 @@ describe('StackForm component', () => {
     it('should update the title in state', () => {
       expect(stackForm.state().title).toEqual(CHANGE_TITLE);
     });
+
+    describe('and submitting the form', () => {
+      beforeEach(() => {
+        stackForm.find('Button').at(1).simulate('click');
+      });
+
+      it('should call addStack prop once', () => {
+        expect(addStack.mock.calls.length).toBe(1);
+      });
+      
+      it('should clear the state', () => {
+        expect(stackForm.state()).toEqual(INITIAL_STATE);
+      });
+    });
+    
   });
 
   describe('when adding a new card', () => {

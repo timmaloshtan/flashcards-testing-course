@@ -7,13 +7,13 @@ import { setStack, loadStacks } from '../actions'
 
 export class StackList extends Component {
   componentDidMount() {
-    const { loadStacks, stacks }= this.props;
+    const { loadStacks, stacks } = this.props;
     if (stacks.length) {
       return;
     }
     loadStacks(stacksData);
   }
-  
+
   render() {
     const { setStack, stacks } = this.props;
     return (

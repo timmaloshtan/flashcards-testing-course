@@ -19,10 +19,7 @@ const stacks = (state = [], action) => {
     case ADD_STACK:
       return [
         ...state,
-        {
-          ...action.stack,
-          id: v4(),
-        },
+        action.stack,
       ];
     default:
       return state;

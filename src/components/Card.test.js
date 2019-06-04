@@ -27,7 +27,7 @@ describe('Card component', () => {
     expect(card.find('.card-answer h4').hasClass('text-hidden')).toBe(true);
   });
     
-  describe('and clicking the card', () => {
+  describe('when clicking the card', () => {
     beforeEach(() => {
       card.find('div').first().simulate('click');
     });
